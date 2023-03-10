@@ -1,0 +1,11 @@
+# A node.js v8 box
+FROM node:18-bullseye
+
+RUN apt-get update
+RUN apt-get -y install psmisc
+
+# Install nodemon globally
+RUN yarn global add nodemon
+
+WORKDIR /workspace
+

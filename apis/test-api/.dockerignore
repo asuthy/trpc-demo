@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+
+.dockerignore
+.gitignore
+.nyc_output
+.vscode
+Dockerfile
+Dockerfile-dev
+Dockerfile-deploy
+README.md
+docker-compose-dev.yml
+
+yarn-error.log

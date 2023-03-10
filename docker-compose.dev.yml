@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  test-api:
+    build:
+      context: ./apis/test-api
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./apis/test-api:/workspace:cached
+    command: bash -c "yarn && yarn run dev"
+
+  test-client:
+    build:
+      context: ./apps/test-client
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./apps/test-client:/workspace:cached
+      - ./apis/test-api:/workspace/apis/test-api:cached
+    command: bash -c "yarn && yarn run dev"
+
+networks:
+  default:
+    name: default_network_yarn3

@@ -13,8 +13,7 @@
   "scripts": {
     "start": "ts-node src/index.ts | pino-pretty",
     "dev": "nodemon --watch src -e ts --exec 'yarn start' --delay 80ms",
-    "test": "jest",
-    "build": "tsc"
+    "test": "jest"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.4.1",

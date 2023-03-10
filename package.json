@@ -2,12 +2,13 @@
   "name": "yarn3",
   "packageManager": "yarn@3.4.1",
   "workspaces": [
-    "apis/test-api",
-    "apps/test-client"
+    "apis/*",
+    "apps/*"
   ],
   "scripts": {
     "dev": "docker-compose -f docker-compose.dev.yml up -d",
-    "down": "docker-compose -f docker-compose.dev.yml down"
+    "down": "docker-compose -f docker-compose.dev.yml down",
+    "build": "yarn dlx turbo build"
   },
   "devDependencies": {
     "typescript": "^4.9.5"

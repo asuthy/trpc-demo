@@ -37,9 +37,9 @@ async function main() {
 
   console.log('helloResponse', helloResponse)
 
-  //const permissionResponse = await trpc.permission.getAll.query()
+  const permissionResponse = await trpc.permission.getAll.query()
 
-  //console.log('permissionResponse', permissionResponse)
+  console.log('permissionResponse', permissionResponse)
 
   const createPostRes = await trpc.post.createPost.mutate({
     title: 'hello world',

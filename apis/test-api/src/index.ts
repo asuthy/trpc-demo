@@ -10,7 +10,7 @@ import {
 import { observable } from '@trpc/server/observable'
 import { WebSocketServer } from 'ws'
 import { z } from 'zod'
-//import supabase from './supabase-client'
+import supabase from './supabase-client'
 
 // This is how you initialize a context for the server
 function createContext(
@@ -25,7 +25,7 @@ const t = initTRPC.context<Context>().create()
 const publicProcedure = t.procedure
 const router = t.router
 
-/*const permissionsRouter = router({
+const permissionsRouter = router({
   getAll: publicProcedure.query(req => {
     const { input } = req
     console.log(req)
@@ -39,7 +39,7 @@ const getPermissions = async () => {
     .select()
 
   return { permissions }
-}*/
+}
 
 const greetingRouter = router({
   hello: publicProcedure
@@ -83,8 +83,8 @@ const postRouter = router({
 // Merge routers together
 const appRouter = router({
   greeting: greetingRouter,
-  post: postRouter
-  //permission: permissionsRouter
+  post: postRouter,
+  permission: permissionsRouter
 })
 
 export type AppRouter = typeof appRouter

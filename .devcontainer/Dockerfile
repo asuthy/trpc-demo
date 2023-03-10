@@ -44,8 +44,8 @@ RUN curl -s "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m).zip" -o "
   rm -rf ./aws "awscliv2-$(uname -m).zip"
 
 # [Optional] Install Supabase CLI.
-#RUN wget -q -O /tmp/supabase.deb https://github.com/supabase/cli/releases/download/v1.41.4/supabase_1.41.4_linux_$(dpkg --print-architecture).deb \
-#  && dpkg -i /tmp/supabase.deb \
-#  && rm /tmp/supabase.deb
+RUN wget -q -O /tmp/supabase.deb https://github.com/supabase/cli/releases/download/v1.41.4/supabase_1.41.4_linux_$(dpkg --print-architecture).deb \
+  && dpkg -i /tmp/supabase.deb \
+  && rm /tmp/supabase.deb
 
 WORKDIR /workspace

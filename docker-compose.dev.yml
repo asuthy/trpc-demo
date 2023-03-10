@@ -8,6 +8,9 @@ services:
     volumes:
       - ./apis/test-api:/workspace:cached
     command: bash -c "yarn && yarn run dev"
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL:-http://host.docker.internal:44321}
+      - SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY}
 
   test-client:
     build:

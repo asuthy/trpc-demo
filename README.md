@@ -1,1 +1,5 @@
-# workspace
+# trpc demo
+
+```
+yarn run dev
+```
